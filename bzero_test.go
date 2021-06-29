@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+//nolint:gocyclo
 func TestBZero(t *testing.T) {
 	type testRow struct {
 		size  uint
