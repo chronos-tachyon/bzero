@@ -71,7 +71,7 @@ func TestBZero(t *testing.T) {
 				data[i] = 'D'
 			}
 
-			BZeroUint8(data[j2:j3])
+			Uint8(data[j2:j3])
 
 			var overwrites, underwrites uint
 			sawNotA := false
@@ -131,20 +131,20 @@ func TestBZero(t *testing.T) {
 func BenchmarkBZero256(b *testing.B) {
 	data := make([]byte, 256)
 	for n := 0; n < b.N; n++ {
-		BZeroUint8(data)
+		Uint8(data)
 	}
 }
 
 func BenchmarkBZero1K(b *testing.B) {
 	data := make([]byte, 1024)
 	for n := 0; n < b.N; n++ {
-		BZeroUint8(data)
+		Uint8(data)
 	}
 }
 
 func BenchmarkBZero4K(b *testing.B) {
 	data := make([]byte, 4096)
 	for n := 0; n < b.N; n++ {
-		BZeroUint8(data)
+		Uint8(data)
 	}
 }

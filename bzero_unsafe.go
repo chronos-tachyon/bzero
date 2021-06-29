@@ -7,16 +7,16 @@ import (
 	"unsafe"
 )
 
-// BZeroUnsafe fills the given memory region with zeroes.
-func BZeroUnsafe(base unsafe.Pointer, size uintptr) {
+// Unsafe fills the given memory region with zeroes.
+func Unsafe(base unsafe.Pointer, size uintptr) {
 	if size < 64 {
-		unsafeBZero(base, size)
+		unsafeImpl(base, size)
 		return
 	}
-	asmBZero(base, size)
+	asmImpl(base, size)
 }
 
-func unsafeBZero(base unsafe.Pointer, size uintptr) {
+func unsafeImpl(base unsafe.Pointer, size uintptr) {
 	const maxInt = int(^uint(0) >> 1)
 	if size > uintptr(maxInt) {
 		for index := uintptr(0); index < size; index++ {
@@ -37,42 +37,42 @@ func unsafeBZero(base unsafe.Pointer, size uintptr) {
 
 }
 
-func dispatchBZeroUint8(slice []uint8) {
+func dispatchUint8(slice []uint8) {
 	header := (*reflect.SliceHeader)(unsafe.Pointer(&slice))
-	BZeroUnsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<0)
+	Unsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<0)
 }
 
-func dispatchBZeroUint16(slice []uint16) {
+func dispatchUint16(slice []uint16) {
 	header := (*reflect.SliceHeader)(unsafe.Pointer(&slice))
-	BZeroUnsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<1)
+	Unsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<1)
 }
 
-func dispatchBZeroUint32(slice []uint32) {
+func dispatchUint32(slice []uint32) {
 	header := (*reflect.SliceHeader)(unsafe.Pointer(&slice))
-	BZeroUnsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<2)
+	Unsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<2)
 }
 
-func dispatchBZeroUint64(slice []uint64) {
+func dispatchUint64(slice []uint64) {
 	header := (*reflect.SliceHeader)(unsafe.Pointer(&slice))
-	BZeroUnsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<3)
+	Unsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<3)
 }
 
-func dispatchBZeroInt8(slice []int8) {
+func dispatchInt8(slice []int8) {
 	header := (*reflect.SliceHeader)(unsafe.Pointer(&slice))
-	BZeroUnsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<0)
+	Unsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<0)
 }
 
-func dispatchBZeroInt16(slice []int16) {
+func dispatchInt16(slice []int16) {
 	header := (*reflect.SliceHeader)(unsafe.Pointer(&slice))
-	BZeroUnsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<1)
+	Unsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<1)
 }
 
-func dispatchBZeroInt32(slice []int32) {
+func dispatchInt32(slice []int32) {
 	header := (*reflect.SliceHeader)(unsafe.Pointer(&slice))
-	BZeroUnsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<2)
+	Unsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<2)
 }
 
-func dispatchBZeroInt64(slice []int64) {
+func dispatchInt64(slice []int64) {
 	header := (*reflect.SliceHeader)(unsafe.Pointer(&slice))
-	BZeroUnsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<3)
+	Unsafe(unsafe.Pointer(header.Data), uintptr(header.Len)<<3)
 }

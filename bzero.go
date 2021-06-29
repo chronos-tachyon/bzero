@@ -1,88 +1,88 @@
 package bzero
 
-// BZeroUint8 fills the given []uint8 slice with zeroes.
-func BZeroUint8(slice []uint8) {
-	dispatchBZeroUint8(slice)
+// Uint8 fills the given []uint8 slice with zeroes.
+func Uint8(slice []uint8) {
+	dispatchUint8(slice)
 }
 
-// BZeroUint16 fills the given []uint16 slice with zeroes.
-func BZeroUint16(slice []uint16) {
-	dispatchBZeroUint16(slice)
+// Uint16 fills the given []uint16 slice with zeroes.
+func Uint16(slice []uint16) {
+	dispatchUint16(slice)
 }
 
-// BZeroUint32 fills the given []uint32 slice with zeroes.
-func BZeroUint32(slice []uint32) {
-	dispatchBZeroUint32(slice)
+// Uint32 fills the given []uint32 slice with zeroes.
+func Uint32(slice []uint32) {
+	dispatchUint32(slice)
 }
 
-// BZeroUint64 fills the given []uint64 slice with zeroes.
-func BZeroUint64(slice []uint64) {
-	dispatchBZeroUint64(slice)
+// Uint64 fills the given []uint64 slice with zeroes.
+func Uint64(slice []uint64) {
+	dispatchUint64(slice)
 }
 
-// BZeroInt8 fills the given []int8 slice with zeroes.
-func BZeroInt8(slice []int8) {
-	dispatchBZeroInt8(slice)
+// Int8 fills the given []int8 slice with zeroes.
+func Int8(slice []int8) {
+	dispatchInt8(slice)
 }
 
-// BZeroInt16 fills the given []int16 slice with zeroes.
-func BZeroInt16(slice []int16) {
-	dispatchBZeroInt16(slice)
+// Int16 fills the given []int16 slice with zeroes.
+func Int16(slice []int16) {
+	dispatchInt16(slice)
 }
 
-// BZeroInt32 fills the given []int32 slice with zeroes.
-func BZeroInt32(slice []int32) {
-	dispatchBZeroInt32(slice)
+// Int32 fills the given []int32 slice with zeroes.
+func Int32(slice []int32) {
+	dispatchInt32(slice)
 }
 
-// BZeroInt64 fills the given []int64 slice with zeroes.
-func BZeroInt64(slice []int64) {
-	dispatchBZeroInt64(slice)
+// Int64 fills the given []int64 slice with zeroes.
+func Int64(slice []int64) {
+	dispatchInt64(slice)
 }
 
-func safeBZeroUint8(slice []uint8) {
+func safeUint8(slice []uint8) {
 	for index := range slice {
 		slice[index] = 0
 	}
 }
 
-func safeBZeroUint16(slice []uint16) {
+func safeUint16(slice []uint16) {
 	for index := range slice {
 		slice[index] = 0
 	}
 }
 
-func safeBZeroUint32(slice []uint32) {
+func safeUint32(slice []uint32) {
 	for index := range slice {
 		slice[index] = 0
 	}
 }
 
-func safeBZeroUint64(slice []uint64) {
+func safeUint64(slice []uint64) {
 	for index := range slice {
 		slice[index] = 0
 	}
 }
 
-func safeBZeroInt8(slice []int8) {
+func safeInt8(slice []int8) {
 	for index := range slice {
 		slice[index] = 0
 	}
 }
 
-func safeBZeroInt16(slice []int16) {
+func safeInt16(slice []int16) {
 	for index := range slice {
 		slice[index] = 0
 	}
 }
 
-func safeBZeroInt32(slice []int32) {
+func safeInt32(slice []int32) {
 	for index := range slice {
 		slice[index] = 0
 	}
 }
 
-func safeBZeroInt64(slice []int64) {
+func safeInt64(slice []int64) {
 	for index := range slice {
 		slice[index] = 0
 	}

@@ -3,9 +3,9 @@
 
 #include "textflag.h"
 
-// func asmBZero(base unsafe.Pointer, size uintptr)
+// func asmImpl(base unsafe.Pointer, size uintptr)
 // Requires: SSE
-TEXT ·asmBZero(SB), NOSPLIT, $0-16
+TEXT ·asmImpl(SB), NOSPLIT, $0-16
 	// load function args
 	MOVQ    base+0(FP), DI
 	MOVQ    size+8(FP), CX

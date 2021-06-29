@@ -2,34 +2,34 @@
 
 package bzero
 
-func dispatchBZeroUint8(slice []uint8) {
-	safeBZeroUint8(slice)
+func dispatchUint8(slice []uint8) {
+	safeUint8(slice)
 }
 
-func dispatchBZeroUint16(slice []uint16) {
-	safeBZeroUint16(slice)
+func dispatchUint16(slice []uint16) {
+	safeUint16(slice)
 }
 
-func dispatchBZeroUint32(slice []uint32) {
-	safeBZeroUint32(slice)
+func dispatchUint32(slice []uint32) {
+	safeUint32(slice)
 }
 
-func dispatchBZeroUint64(slice []uint64) {
-	safeBZeroUint64(slice)
+func dispatchUint64(slice []uint64) {
+	safeUint64(slice)
 }
 
-func dispatchBZeroInt8(slice []int8) {
-	safeBZeroInt8(slice)
+func dispatchInt8(slice []int8) {
+	safeInt8(slice)
 }
 
-func dispatchBZeroInt16(slice []int16) {
-	safeBZeroInt16(slice)
+func dispatchInt16(slice []int16) {
+	safeInt16(slice)
 }
 
-func dispatchBZeroInt32(slice []int32) {
-	safeBZeroInt32(slice)
+func dispatchInt32(slice []int32) {
+	safeInt32(slice)
 }
 
-func dispatchBZeroInt64(slice []int64) {
-	safeBZeroInt64(slice)
+func dispatchInt64(slice []int64) {
+	safeInt64(slice)
 }

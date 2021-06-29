@@ -7,5 +7,5 @@ import (
 	"unsafe"
 )
 
-// asmBZero implements bzero using 16-byte / 128-bit AVX instructions; minimum size is 64 bytes.
-func asmBZero(base unsafe.Pointer, size uintptr)
+// asmImpl implements bzero using 16-byte / 128-bit AVX instructions; minimum size is 64 bytes.
+func asmImpl(base unsafe.Pointer, size uintptr)

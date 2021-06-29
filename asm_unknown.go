@@ -7,6 +7,6 @@ import (
 	"unsafe"
 )
 
-func asmBZero(base unsafe.Pointer, size uintptr) {
-	unsafeBZero(base, size)
+func asmImpl(base unsafe.Pointer, size uintptr) {
+	unsafeImpl(base, size)
 }
